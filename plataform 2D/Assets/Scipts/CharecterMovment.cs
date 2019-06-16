@@ -8,11 +8,13 @@ public class CharecterMovment : MonoBehaviour
     public bool facingrigth = true;
     public float movemenDirection;
     private Rigidbody rigidbody;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class CharecterMovment : MonoBehaviour
         {
             flip();
         }
+        animator.SetFloat("Speed", Mathf.Abs(movemenDirection));
     }
 
     void flip()
