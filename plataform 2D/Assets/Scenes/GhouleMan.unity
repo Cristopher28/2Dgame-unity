@@ -276,12 +276,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d652e09bd9ffa744c87419421ba7c400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMargin: 1
+  xMargin: 0.5
   yMargin: 1
-  xsmooth: 10
+  xsmooth: 5
   ysmooth: 10
-  maxXandY: {x: 0, y: 0}
-  minXandY: {x: 0, y: 0}
+  maxXandY: {x: 1.18, y: 1.35}
+  minXandY: {x: -7.56, y: 2.54}
   CamaraTarget: {fileID: 1327404142}
 --- !u!4 &792420143 stripped
 Transform:
