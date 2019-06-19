@@ -27,7 +27,7 @@ public class Move_Camara : MonoBehaviour
 
     bool CheckYMargin()
     {
-        return Mathf.Abs(transform.position.x - CamaraTarget.position.x) > yMargin;
+        return Mathf.Abs(transform.position.y - CamaraTarget.position.y) > yMargin;
     }
 
 
@@ -64,7 +64,7 @@ public class Move_Camara : MonoBehaviour
         }
 
         targetX = Mathf.Clamp(targetX, minXandY.x, maxXandY.x);
-        targetY = Mathf.Clamp(targetX, minXandY.y, maxXandY.y);
+        targetY = Mathf.Clamp(targetY, minXandY.y, maxXandY.y);
 
         transform.position = new Vector3(targetX, targetY, transform.position.z);
     }

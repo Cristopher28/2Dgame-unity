@@ -10,6 +10,8 @@ public class CharecterMovment : MonoBehaviour
     private Rigidbody rigidbody;
     public Animator animator;
 
+    public float SpeedJump = 600.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,10 @@ public class CharecterMovment : MonoBehaviour
     void Update()
     {
         movemenDirection = Input.GetAxis("Horizontal");
+        if (Input.GetButtonDown("Jump"))
+        {
+            rigidbody.AddForce(new Vector2(0, SpeedJump));
+        }
     }
 
     void FixedUpdate()
