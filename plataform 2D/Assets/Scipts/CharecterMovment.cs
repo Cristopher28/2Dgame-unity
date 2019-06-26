@@ -9,8 +9,21 @@ public class CharecterMovment : MonoBehaviour
     public float movemenDirection;
     private Rigidbody rigidbody;
     public Animator animator;
-
+    //variable para el salto 
     public float SpeedJump = 600.0f;
+    //variable para deteccion de piso 
+    public bool ground = false;
+    public Transform GroundCheck;
+    public float Ground_Radius = 0.5f;
+    public LayerMask WhatIsGround;
+
+     void Awake()
+    {
+        GroundCheck = GameObject.Find("GroundCheck").transform;
+    }
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,14 +36,17 @@ public class CharecterMovment : MonoBehaviour
     void Update()
     {
         movemenDirection = Input.GetAxis("Horizontal");
-        if (Input.GetButtonDown("Jump"))
+        if (ground && Input.GetButtonDown("Jump"))
         {
+            animator.SetTrigger("IsJumping");
             rigidbody.AddForce(new Vector2(0, SpeedJump));
+            
         }
     }
 
     void FixedUpdate()
     {
+        ground = Physics2D.OverlapCircle(GroundCheck.position, Ground_Radius, WhatIsGround);
         rigidbody.velocity = new Vector2(maxspeed * movemenDirection, rigidbody.velocity.y);
         if(movemenDirection > 0.0f && !facingrigth)
         {
