@@ -36,6 +36,7 @@ public class CharecterMovment : MonoBehaviour
     void Update()
     {
         movemenDirection = Input.GetAxis("Horizontal");
+
         if (ground && Input.GetButtonDown("Jump"))
         {
             animator.SetTrigger("IsJumping");
