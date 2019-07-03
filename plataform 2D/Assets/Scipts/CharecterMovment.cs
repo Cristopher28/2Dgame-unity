@@ -16,10 +16,16 @@ public class CharecterMovment : MonoBehaviour
     public Transform GroundCheck;
     public float Ground_Radius = 0.5f;
     public LayerMask WhatIsGround;
+    // variables para ataque
+    public float KnifeSpeed = 600f;
+    public Transform KnifeSpawn;
+    public Rigidbody KnifePrefab;
+    Rigidbody Clone;
 
      void Awake()
     {
         GroundCheck = GameObject.Find("GroundCheck").transform;
+        KnifeSpawn = GameObject.Find("KnifeSpawn").transform;
     }
 
 
@@ -57,6 +63,12 @@ public class CharecterMovment : MonoBehaviour
             flip();
         }
         animator.SetFloat("Speed", Mathf.Abs(movemenDirection));
+
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Attack();
+        }
     }
 
     void flip()
@@ -65,4 +77,12 @@ public class CharecterMovment : MonoBehaviour
         transform.Rotate(Vector3.up, 180.0f, Space.World);
     }
 
+
+     void Attack()
+    {
+        Clone = Instantiate(KnifePrefab, KnifeSpawn.position, KnifeSpawn.rotation) as Rigidbody;
+        Clone.AddForce(KnifeSpawn.transform.right * KnifeSpeed);
+
+        
+    }
 }
