@@ -1030,6 +1030,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a7b02819ed304745bee00e93d4ab871, type: 3}
+--- !u!1 &1113050507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1113050508}
+  m_Layer: 0
+  m_Name: KnifeSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1113050508
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113050507}
+  m_LocalRotation: {x: -0, y: -0.9238789, z: 0, w: 0.38268507}
+  m_LocalPosition: {x: -1.6492159, y: 1.17, z: 0.14684081}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1224871676}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1224871673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,12 +1118,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224871673}
   m_LocalRotation: {x: -0, y: 0.9238789, z: -0, w: 0.38268507}
-  m_LocalPosition: {x: 110.31, y: 5.24, z: -0.66}
+  m_LocalPosition: {x: 6, y: -1.12, z: -0.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 792420143}
   - {fileID: 1327404142}
   - {fileID: 229786731}
+  - {fileID: 1113050508}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 135, z: 0}
@@ -1120,6 +1151,10 @@ MonoBehaviour:
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 512
+  KnifeSpeed: 600
+  KnifeSpawn: {fileID: 1113050508}
+  KnifePrefab: {fileID: 4746724472084481248, guid: 0868c4869354dbc40bf7c8d5c4973eaa,
+    type: 3}
 --- !u!95 &1224871678
 Animator:
   serializedVersion: 3
@@ -1394,63 +1429,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 378021100}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1931044269
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 100000, guid: 183441778736cd8479aee97256f241f5, type: 3}
-      propertyPath: m_Name
-      value: knife
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 183441778736cd8479aee97256f241f5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 183441778736cd8479aee97256f241f5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 183441778736cd8479aee97256f241f5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 183441778736cd8479aee97256f241f5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 183441778736cd8479aee97256f241f5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 183441778736cd8479aee97256f241f5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 183441778736cd8479aee97256f241f5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 183441778736cd8479aee97256f241f5, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 183441778736cd8479aee97256f241f5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 183441778736cd8479aee97256f241f5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 183441778736cd8479aee97256f241f5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 183441778736cd8479aee97256f241f5, type: 3}
 --- !u!4 &2000112351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7458761846327666193, guid: 7a7b02819ed304745bee00e93d4ab871,
